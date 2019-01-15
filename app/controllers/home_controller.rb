@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Home Controller
 class HomeController < ApplicationController
   # GET users/
   def index; end
