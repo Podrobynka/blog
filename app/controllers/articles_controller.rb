@@ -16,10 +16,23 @@ class ArticlesController < ApplicationController
       render action: 'new'
     end
   end
-end
 
-private
+  def edit
+    @article = Article.find_by(id: params[:id])
+  end
 
-def article_params
-  params.require(:article).permit(:title, :text, :updated_at)
+  def update
+    @article = Article.find_by(id: params[:id])
+    if @article.valid?
+      @article.update(article_params)
+    else
+      render action: 'edit'
+    end
+  end
+
+  private
+
+  def article_params
+    params.require(:article).permit(:title, :text, :updated_at)
+  end
 end

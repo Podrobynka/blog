@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'contacts' => 'contacts#new'
   get 'about' => 'about#index'
   get 'terms' => 'terms#index'
+
   resources :articles
   resource :contacts, only: %i[create]
 
