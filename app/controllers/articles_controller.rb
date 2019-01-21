@@ -6,25 +6,31 @@ class ArticlesController < ApplicationController
     @articles = Article.all.order(updated_at: :desc)
   end
 
+  def show
+    @article = Article.find(params[:id])
+  end
+
   def new; end
 
   def create
     @article = Article.new(article_params)
     if @article.valid?
       @article.save
+      redirect_to @article
     else
       render action: 'new'
     end
   end
 
   def edit
-    @article = Article.find_by(id: params[:id])
+    @article = Article.find(params[:id])
   end
 
   def update
-    @article = Article.find_by(id: params[:id])
+    @article = Article.find(params[:id])
     if @article.valid?
       @article.update(article_params)
+      redirect_to @article
     else
       render action: 'edit'
     end
