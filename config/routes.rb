@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'about/index'
   get 'terms/index'
   get 'home/index'
+  get 'articles/index'
 
   get '/' => 'home#index'
   get 'contacts' => 'contacts#new'
