@@ -6,5 +6,7 @@
   <%= @article.text %>
 </p>
 
-<!-- <%= link_to 'Show all articles', articles_path %> -->
-<a href="/articles">Show all articles</a>
+<h6>
+  <em><%= link_to 'Show all articles', articles_path %></em>
+  <em><%= link_to 'Edit', edit_article_path(@article) %></em>
+</h6>
