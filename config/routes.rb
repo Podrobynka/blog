@@ -1,15 +1,13 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'about/index'
-  get 'terms/index'
   get 'home/index'
   get 'articles/index'
 
   get '/' => 'home#index'
   get 'contacts' => 'contacts#new'
-  get 'about' => 'about#index'
-  get 'terms' => 'terms#index'
+  get 'about' => 'pages#about'
+  get 'terms' => 'pages#terms'
 
   resources :articles
   resource :contacts, only: %i[create]
