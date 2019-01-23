@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'terms' => 'pages#terms'
 
   resources :articles do
-    resources :comments
+    resources :comments, only: %i[create]
   end
 
   resource :contacts, only: %i[create]

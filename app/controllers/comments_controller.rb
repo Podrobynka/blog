@@ -2,8 +2,9 @@ class CommentsController < ApplicationController
   def create
     @article = Article.find(params[:article_id])
     @article.comments.create(comment_params)
+    redirect_to @article
 
-    redirect_to articles_path(@article)
+    @article.comments = Comment.all.order(created_at: :desc)
   end
 
   private

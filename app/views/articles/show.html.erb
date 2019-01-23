@@ -39,3 +39,14 @@
     <%= f.submit %>
   </p>
 <% end %>
+
+<h1>Comments:</h1>
+
+<% @article.comments.each do |comment| %>
+  <div>
+    <h3><%= comment.author %></h3>
+    <p><%= comment.body %></p>
+    <h6><em><%= comment.created_at %></em></h6>
+    <hr>
+  </div>
+<% end %>
