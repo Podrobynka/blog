@@ -44,7 +44,7 @@
 
 <% @article.comments.each do |comment| %>
   <div>
-    <h3><%= comment.author %></h3>
+    <p><i><%= comment.author %></i></p>
     <p><%= comment.body %></p>
     <h6><em><%= comment.created_at %></em></h6>
     <hr>
