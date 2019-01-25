@@ -2,10 +2,15 @@
 
 Rails.application.routes.draw do
   devise_for :users
-  root to: "home#index"
+  root to: 'home#index'
+
+  # перенаправлення на сторінку користувача після авторизації
+  get 'persons/profile', as: 'user_root'
+
 
   get 'home/index'
   get 'articles/index'
+  get 'persons/profile'
 
   get '/' => 'home#index'
   get 'contacts' => 'contacts#new'

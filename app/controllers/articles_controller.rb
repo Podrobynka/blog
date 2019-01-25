@@ -2,7 +2,7 @@
 
 # Articles Controller
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :except => [:show, :index]
 
   def index
     @articles = Article.all.order(updated_at: :desc)
