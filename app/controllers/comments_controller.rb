@@ -5,8 +5,6 @@ class CommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     @article.comments.create(comment_params)
     redirect_to @article
-
-    @article.comments = Comment.all.order(created_at: :desc)
   end
 
   private
