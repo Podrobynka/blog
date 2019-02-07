@@ -24,7 +24,7 @@
 
 <h3>Add a comment</h3>
 
-<%= form_for([ @article, @article.comments.build ]) do |f| %>
+<%= form_for [ @article, Comment.new ] do |f| %>
   <p>
     <ul>
       <% @article&.errors&.full_messages&.each do |msg| %>
@@ -46,7 +46,7 @@
 
 <% @article.comments.each do |comment| %>
   <div>
-    <p><i><%= comment.author %></i></p>
+    <p><i><%= comment.user.username %></i></p>
     <p><%= comment.body %></p>
     <h6><em><%= comment.created_at %></em></h6>
     <hr>
