@@ -7,9 +7,7 @@ Rails.application.routes.draw do
   # перенаправлення на сторінку користувача після авторизації
   get 'persons/profile', as: 'user_root'
 
-
   get 'home/index'
-  get 'articles/index'
   get 'persons/profile'
 
   get '/' => 'home#index'
