@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'shoulda/matchers'
 
 describe Article, type: :model do
   describe 'assotiations' do
@@ -10,5 +9,14 @@ describe Article, type: :model do
   describe 'validations' do
     it { should validate_presence_of :title }
     it { should validate_presence_of :text }
+  end
+
+  describe "#subject" do
+    it 'returns article title' do
+      binding.pry
+      user = create :user
+      article = create :article, user: user, title: 'Lorem ipsum'
+      expect(article.subject).to eq 'Lorem ipsum'
+    end
   end
 end
